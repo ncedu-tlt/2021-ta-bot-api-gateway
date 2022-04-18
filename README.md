@@ -1,2 +1,1 @@
-# 2021-ta-bot-api-gateway
-API gateway for Bot
+Telegram bot for searching good locations in the city
