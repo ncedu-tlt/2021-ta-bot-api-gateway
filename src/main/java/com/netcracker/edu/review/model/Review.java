@@ -1,47 +1,46 @@
 package com.netcracker.edu.review.model;
 
-import com.netcracker.edu.review.model.ui.UiReview;
-import lombok.Data;
-
-import javax.persistence.*;
 import java.util.Date;
 
-@Data
-@Entity
-@Table(name = "comment")
+
 public class Review {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private int id;
-
-    @Column(name = "review")
-    private String review;
-
-    @Column(name = "author_id")
-    private int authorId;
-
-    @ManyToOne
-    @JoinColumn(name = "mark")
-    private Mark mark;
-
-    @Column(name = "date_creation")
-    private Date dateCreation = new Date();
-
-    @Column(name = "date_edit")
-    private Date dateEdit = null;
-
-    @Column(name = "place_id")
-    private int placeId;
-
-    public Review() {
+    public int getId() {
+        return id;
     }
 
-    public Review(UiReview uiReview, Mark mark) {
-        setAuthorId(uiReview.getAuthorId());
-        setReview(uiReview.getReview());
-        setPlaceId(uiReview.getPlaceId());
-        setMark(mark);
+    public String getReview() {
+        return review;
+    }
+
+    public int getAuthorId() {
+        return authorId;
+    }
+
+    public Mark getMark() {
+        return mark;
+    }
+
+    public Date getDateCreation() {
+        return dateCreation;
+    }
+
+    public Date getDateEdit() {
+        return dateEdit;
+    }
+
+    public int getPlaceId() {
+        return placeId;
+    }
+
+    private int id;
+    private String review;
+    private int authorId;
+    private Mark mark;
+    private Date dateCreation = new Date();
+    private Date dateEdit = null;
+    private int placeId;
+    public Review() {
     }
 
 }

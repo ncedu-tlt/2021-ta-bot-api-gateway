@@ -18,7 +18,7 @@ public class ReviewController {
     private ReviewService reviewService;
 
     @PostMapping("/review")
-    public ResponseEntity<Review> CreateReview(@RequestBody UiReview uiReviewUpdated) {
+    public ResponseEntity<Review> createReview(@RequestBody UiReview uiReviewUpdated) {
         return reviewService.createReview(uiReviewUpdated);
 
     }
