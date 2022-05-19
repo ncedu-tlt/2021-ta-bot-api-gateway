@@ -11,15 +11,20 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("/api/")
+@RequestMapping("/api")
 public class PlaceController {
 
     @Autowired
     private PlaceManager placeManager;
 
-    @GetMapping("/place/{address}")
-    public ResponseEntity<Place> getPlaceByAddress(@PathVariable("address") String address) {
-        return ResponseEntity.ok(placeManager.getByAddress(address));
+    @PostMapping("/place/address")
+    public ResponseEntity<Place> getPlaceByAddress(@RequestBody UiPlace uiPlace) {
+        return ResponseEntity.ok(placeManager.getByAddress(uiPlace));
+    }
+
+    @PostMapping("/place/name")
+    public ResponseEntity<Place> getPlaceByName(@RequestBody UiPlace uiPlace) {
+        return ResponseEntity.ok(placeManager.getByName(uiPlace));
     }
 
     @GetMapping("/place")
