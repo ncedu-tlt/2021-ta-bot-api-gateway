@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("/api")
+@RequestMapping("/api/")
 public class PlaceController {
 
     @Autowired
@@ -47,9 +47,14 @@ public class PlaceController {
         return ResponseEntity.ok(placeManager.getPlaceIds(placeId));
     }
 
+    @GetMapping("/place/placeId/{id}")
+    public ResponseEntity<Place> getPlaceById(@PathVariable("id") int id) {
+        return ResponseEntity.ok(placeManager.getPlaceById(id));
+    }
+
     @DeleteMapping("/place/{id}")
     public ResponseEntity<HttpStatus> deletePlaceById(@PathVariable("id") int id) {
         placeManager.deleteById(id);
-        return ResponseEntity.accepted().build();
+        return ResponseEntity.noContent().build();
     }
 }

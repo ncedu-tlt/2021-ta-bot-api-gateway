@@ -53,4 +53,8 @@ public class PlaceManager {
     public Place getByName(UiPlace uiPlace) {
         return placeService.getByName(uiPlace);
     }
+
+    public Place getPlaceById(int id) {
+        return placeService.getPlaceById(id);
+    }
 }
