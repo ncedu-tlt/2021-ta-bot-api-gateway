@@ -22,3 +22,4 @@ rating-service-url: "https://ta-bot-reviews-management.herokuapp.com"
 rating-service-rating: "/rating"
 rating-service-topplaces: "/topplaces"
 rating-service-tenbestplace: "/tenbestplace"
+

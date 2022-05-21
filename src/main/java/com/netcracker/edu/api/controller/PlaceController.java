@@ -2,6 +2,7 @@ package com.netcracker.edu.api.controller;
 
 import com.netcracker.edu.api.manager.PlaceManager;
 import com.netcracker.edu.api.model.*;
+import com.netcracker.edu.api.model.ui.RatingResponse;
 import com.netcracker.edu.api.model.ui.UiPlace;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -38,7 +39,7 @@ public class PlaceController {
     }
 
     @PostMapping("/place/category")
-    public ResponseEntity <List<Rating>> findPopularPlace(@RequestBody Category category) {
+    public ResponseEntity <List<RatingResponse>> findPopularPlace(@RequestBody Category category) {
        return ResponseEntity.ok(placeManager.placeByCategory(category));
     }
 
